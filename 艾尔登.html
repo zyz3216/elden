@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>ELDEN RING</title>
+		<link rel="stylesheet" href="./css/交界地.css">
+		<link rel="stylesheet" href="./css/导航.css">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: goldenrod;
+				font-family: microsoft yahei;
+				width: 100%;
+				height: 100%;
+				justify-content: center;
+				align-items: center;
+				background:url(img/3.jpg);
+				no-repat;
+				background-size: cover;
+				background-attachment: fixed;
+			}
+
+			main {
+				width: 1300px;
+				margin: 5px auto;
+				margin-top: 50px;
+			}
+
+			#left {
+				width: 300px;
+				height: 600px;
+				display: inline-block;
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+
+			#right {
+				display: inline-block;
+				vertical-align: top;
+
+			}
+
+			.box {
+				display: inline-block;
+				width: 320px;
+				height: 250px;
+				border-radius: 10px;
+				background-color: gold;
+			}
+
+			.box:hover {
+				cursor: pointer;
+				box-shadow: 0 30px 50px -10px palegoldenrod;
+				transform: translateY(-20px);
+				transition: 0.8s;
+			}
+
+			p {
+				font-size: 15px;
+				text-align: center;
+			}
+
+			#left:hover {
+				cursor: pointer;
+				box-shadow: 0 30px 50px -10px palegoldenrod;
+				transition: 1s;
+			}
+
+			#left img:hover {
+				transform: scale(1.01);
+				transition: 0.5s;
+
+			}
+
+			/* .box img:hover{
+				transform: scale(1.3);
+				opacity: 1;
+				transition: 0.8s; */
+			}
+
+			.line2 {
+				margin-top: 200px;
+			}
+
+			.p1 {
+				color: black;
+				font-size: 15px;
+			}
+
+			.p2 {
+				color: black;
+				font-size: 15px;
+				text-align: center;
+			}
+
+			footer {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				height: 70vh;
+				overflow: hidden;
+				
+			}
+
+			/* 定义外层容器样式 */
+			.shell {
+				position: relative;
+				/* 相对定位 */
+				width: 60vw;
+				/* 宽度占视口宽度的60% */
+				height: 20vw;
+				/* 高度占视口高度的40% */
+				max-width: 380px;
+				/* 最大宽度为380像素 */
+				max-height: 150px;
+				/* 最大高度为250像素 */
+				margin: 0;
+				/* 外边距为0 */
+				color: white;
+				/* 字体颜色为白色 */
+				perspective: 1000px;
+				/* 透视效果，观察者与z=0平面的距离 */
+				transform-origin: center;
+				/* 变形原点为中心 */
+			}
+
+			/* 定义内容容器样式 */
+			.content {
+				display: flex;
+				/* 设置为弹性盒子布局 */
+				justify-content: center;
+				/* 主轴居中对齐 */
+				align-items: center;
+				/* 交叉轴居中对齐 */
+				position: absolute;
+				/* 绝对定位 */
+				width: 100%;
+				/* 宽度100% */
+				height: 60%;
+				/* 高度100% */
+				transform-origin: center;
+				/* 变形原点为中心 */
+				transform-style: preserve-3d;
+				/* 保持3D变换 */
+				transform: translateZ(-30vw) rotateY(0);
+				/* 变换：沿z轴平移-30vw，绕y轴旋转0度 */
+				animation: carousel 9s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+				/* 动画：名称为carousel，持续时间9秒，无限循环，缓动函数为cubic-bezier(0.77, 0, 0.175, 1)，动画结束后保持最后状态 */
+			}
+
+			/* 定义项目样式 */
+			.item {
+				position: absolute;
+				/* 绝对定位 */
+				width: 60vw;
+				/* 宽度占视口宽度的60% */
+				height: 40vw;
+				/* 高度占视口高度的40% */
+				max-width: 380px;
+				/* 最大宽度为380像素 */
+				max-height: 250px;
+				/* 最大高度为250像素 */
+				box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+				/* 设置阴影 */
+				border-radius: 6px;
+				/* 边框圆角半径为6像素 */
+				background-size: cover;
+				/* 背景图片等比例缩放并覆盖整个容器 */
+				-webkit-box-reflect: below 25px -webkit-linear-gradient(transparent 50%, rgba(255, 255, 255, 0.3));
+				/* 创建倒影效果 */
+			}
+
+			/* 第一个项目样式 */
+			.item:nth-child(1) {
+				background-image: url(img/3.jpg);
+				/* 背景图片为01.jpg */
+				transform: rotateY(0) translateZ(40vw);
+				/* 变换：绕y轴旋转0度，沿z轴平移35vw */
+			}
+
+			/* 第二个项目样式 */
+			.item:nth-child(2) {
+				background-image: url(img/4.jpg);
+				/* 背景图片为02.jpg */
+				transform: rotateY(90deg) translateZ(40vw);
+				/* 变换：绕y轴旋转120度，沿z轴平移35vw */
+			}
+
+			/* 第三个项目样式 */
+			.item:nth-child(3) {
+				background-image: url(img/8.jpg);
+				/* 背景图片为03.jpg */
+				transform: rotateY(180deg) translateZ(40vw);
+				/* 变换：绕y轴旋转240度，沿z轴平移35vw */
+			}
+
+			.item:nth-child(4) {
+				background-image: url(img/6.jpg);
+				transform: rotateY(270deg) translateZ(40vw);
+			}
+
+			/* 定义动画 */
+			@keyframes carousel {
+
+				0%,
+				20% {
+					transform: translateZ(-35vw) rotateY(0);
+					/* 变换：沿z轴平移-35vw，绕y轴旋转0度 */
+				}
+
+				27.5%,
+				40% {
+					transform: translateZ(-35vw) rotateY(-90deg);
+					/* 变换：沿z轴平移-35vw，绕y轴旋转-120度 */
+				}
+
+				55%,
+				60% {
+					transform: translateZ(-35vw) rotateY(-180deg);
+					/* 变换：沿z轴平移-35vw，绕y轴旋转-240度 */
+				}
+
+				82.5%,
+				80% {
+					transform: translateZ(-35vw) rotateY(-270deg);
+					/* 变换：沿z轴平移-35vw，绕y轴旋转-360度 */
+				}
+
+				99%,
+				100% {
+					transform: translateZ(-35vw) rotateY(-360deg);
+				}
+			}
+
+			.cover {
+				position: absolute;
+				top: 20px;
+				left: 350px;
+				opacity: 0.8;
+				justify-content: center;
+				align-self: center;
+			}
+			.dt{
+				font-size: 50px;
+				font-weight: 400;
+				color: #ffffff;
+				margin-top: 10px;
+			}
+			.nr{
+				font-size: 50px;
+				font-weight: 400;
+				color: #ffffff;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav1">
+			<ul class="nav1list">
+				<li class="btli"><a href="">主     页</a></li>
+				<li class="btli"><a href="人物.html" target="_blank">人     物</a></li>
+				<li class="btli"><a href="武器.html" target="_blank">武     器</a></li>
+				<li class="btli"><a href="登录.html" target="_blank">登     录</a></li>
+			</ul>
+		</div>
+		<head>
+			<video src="img/elden4 中文字幕.webm" autoplay muted loop poster="img/6.jpg" width="100%"></video>
+			<div class="cover">
+				<img src="img/elden-ring-logo-01-en-24jan22.webp" width="600">
+			</div>
+		</head>
+		<p class="dt">地图展示</p>
+		<main>
+			<div id="left">
+				<img src="img/BaiduNetdiskDownload/003c-d10101576c030c2480fe3cd90c5c0e97.jpg" width="100%"
+					height="100%">
+			</div>
+			<div id="right">
+				<div id="line1">
+					<div class="box">
+						<img src="img/BaiduNetdiskDownload/1245620_20220313155429_1.png" width="320px" height="250px">
+						<p>宁姆格福</p>
+						<p class="p1">即使指引已经破碎，也请你当上艾尔登之王</p>
+						<p class="p2">黄金树</p>
+					</div>
+					<div class="box">
+						<img src="img/BaiduNetdiskDownload/1245620_20220323235828_1.png" width="320px" height="250px">
+						<p>湖之利耶尼亚</p>
+						<p class="p1">即使指引已经破碎，也请你当上艾尔登之王</p>
+						<p class="p2">魔法学院</p>
+					</div>
+					<div class="box">
+						<img src="img/BaiduNetdiskDownload/1245620_20220314234734_1.png" width="320px" height="250px">
+						<p>天空之城</p>
+						<p class="p1">即使指引已经破碎，也请你当上艾尔登之王</p>
+						<p class="p2">拉普顿.桑克斯</p>
+					</div>
+				</div>
+				<div class="line2">
+					<div class="box">
+						<img src="img/BaiduNetdiskDownload/1245620_20220325230731_1.png" width="320px" height="250px">
+						<p>诺克隆恩</p>
+						<p class="p1">即使指引已经破碎，也请你当上艾尔登之王</p>
+						<p class="p2">永恒之城</p>
+					</div>
+					<div class="box">
+						<img src="img/BaiduNetdiskDownload/1245620_20220325225507_1.png" width="320px" height="250px">
+						<p>月光祭坛</p>
+						<p class="p1">即使指引已经破碎，也请你当上艾尔登之王</p>
+						<p class="p2">菈妮</p>
+					</div>
+					<div class="box">
+						<img src="img/BaiduNetdiskDownload/20220228152829_738be.jpg" width="320px" height="250px">
+						<p>史东薇尔</p>
+						<p class="p1">即使指引已经破碎，也请你当上艾尔登之王</p>
+						<p class="p2">黄金君王</p>
+					</div>
+				</div>
+		</main>
+		<p class="nr">游戏内容</p>
+		<footer>
+			<div class="shell">
+				<div class="content">
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+				</div>
+			</div>
+		</footer>
+		<div class="news">
+		  <h3>更新咨讯</h3>
+		  <div class="news-main">
+		    <div id="container">
+		      <img id="image1" src="img/c852e4ff53f9a9149c2ff2b89f91d903372a906c.png" />
+		      <img id="image2" src="img/4.jpg" />
+		      <img id="image3" src="img/6.jpg" />
+		      <img id="image4" src="img/R-C.jpg" />
+		      <img id="image5" src="img/1647433486875_775333974.jpg" />
+		      <img id="image6" src="img/BaiduNetdiskDownload/1245620_20220325233514_1.png" />
+		      <img id="image7" src="img/BaiduNetdiskDownload/1245620_20220325233514_1.png" />
+		    </div>
+		    <div class="news-content">
+		      <ul class="news-nav">
+		        <li class="nav-item nav-item-active">最新</li>
+		        <li class="nav-item nav-item-active">新闻</li>
+		        <li class="nav-item nav-item-active">公告</li>
+		        <li class="nav-item nav-item-active">活动</li>
+		      </ul>
+		      <ul class="news-list">
+		        <li>
+		          <a href="" class="list-item">
+		            <p class="item-title ellipsis">
+		              感谢各位玩家对《艾尔登法环》的支持。为修正1.09版本中出现的异常状况及调整游戏内平衡，目前已发布游戏更新档。请将游戏更新至最新版本后再行游玩。
+		            </p>
+		            <p class="item-data">2023/04/18</p>
+		          </a>
+		        </li>
+		        <li>
+		          <a href="" class="list-item">
+		            <p class="item-title ellipsis">
+		              《艾尔登法环》追加DLC扩充内容"Shadow of the
+		              Erdtree"现正锐意开发中，敬请期待交界地的全新冒险！
+		            </p>
+		            <p class="item-data">2023/02/28</p>
+		          </a>
+		        </li>
+		        <li>
+		          <a href="" class="list-item">
+		            <p class="item-title ellipsis">
+		              将这份荣耀，献给受赐福指引之人！《艾尔登法环》正式突破2000万份全球累积销量！衷心感谢每一位褪色者的支持与陪伴，敬请期待今后的更多展开。
+		            </p>
+		            <p class="item-data">2023/02/22</p>
+		          </a>
+		        </li>
+		        <li>
+		          <a href="" class="list-item">
+		            <p class="item-title ellipsis">
+		              感谢各位玩家对《艾尔登法环》的支持。为修正游戏内的问题，目前已发布游戏更新档。请将游戏更新至最新版本后再行游玩。
+		            </p>
+		            <p class="item-data">2022/12/15</p>
+		          </a>
+		        </li>
+		      </ul>
+		      <a href="" class="news-more">查看所有资讯</a>
+		    </div>
+		  </div>
+		</div>
+		
+		<script>
+		  // 创建一个隐藏的图片列表
+		  var images = [
+		    "image1",
+		    "image2",
+		    "image3",
+		    "image4",
+		    "image5",
+		    "image6",
+		    "image7",
+		  ];
+		  var currentImageIndex = 0;
+		
+		  function nextImage() {
+		    // 获取当前图片元素
+		    var image = document.getElementById(images[currentImageIndex]);
+		    // 隐藏当前图片
+		    image.style.display = "none";
+		    // 更新当前图片索引
+		    currentImageIndex = (currentImageIndex + 1) % images.length;
+		    // 显示下一张图片
+		    image = document.getElementById(images[currentImageIndex]);
+		    image.style.display = "block";
+		  }
+		
+		  function preloadImages() {
+		    for (var i = 0; i < images.length; i++) {
+		      var img = new Image();
+		      img.src = document.getElementById(images[i]).src;
+		    }
+		  }
+		
+		  preloadImages();
+		  // 每隔2秒切换图片
+		  setInterval(nextImage, 2000);
+		  // 搜索功能
+		  function search() {
+		    var input = document.getElementById("searchInput").value;
+		    // 在这里实现搜索逻辑
+		    alert("你搜索的内容是：" + input);
+		  }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,151 @@
+.news {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 100px;
+	background: url(img/OCTOPATH_TRAVELER_ARTWORK_1_1920x1080.jpg);
+	no-repat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+a {
+	text-decoration: none;
+}
+
+.news {
+	width: 100%;
+	height: 600px;
+	background: url("../img/BaiduNetdiskDownload/1245620_20220313182147_1.png") no-repeat center cover;
+	color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.news h3 {
+	font-size: 50px;
+	font-weight: 400;
+	text-align: center;
+	color: #d9a842;
+}
+
+.news-main {
+	width: 1280px;
+	margin: 0 autos;
+	display: flex;
+	justify-content: center;
+}
+
+#container {
+	width: 1000px;
+	height: 360px;
+	background: rgba(38, 18, 12, 0.62);
+
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+#container img {
+  width: 100%;
+  height: 100%;
+}
+
+.news-content {
+	width: 1000px;
+	height: 360px;
+	background: rgba(38, 18, 12, 0.62);
+
+	margin: 0;
+	position: relative;
+}
+
+.news-swiper img {
+	width: 100%;
+	height: auto;
+}
+
+.news-nav {
+	list-style: none;
+	width: 600px;
+	margin: 20px auto 0;
+	display: flex;
+	align-items: flex-start;
+	border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-nav .nav-item {
+	padding: 0 19px 12px;
+	font-size: 18px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.news-nav .nav-item-active {
+	color: gold;
+}
+.news-nav .nav-item-active:hover{
+	opacity: 0.8;
+	text-shadow: 10px gold;
+}
+.news-nav .nav-item-active::after {
+	display: block;
+	content: " ";
+	width: 100%;
+	height: 3px;
+	background: gold;
+	position: absolute;
+	left: 0;
+	bottom: 300px;
+}
+.news-list {
+	list-style: none;
+	width: 600px;
+	height: 260px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.list-item {
+	font-size: 16px;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+	position: relative;
+}
+
+.list-item .item-title {
+	width: 600px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 11px;
+}
+
+.list-item .ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.list-item .item-data {
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.35);
+}
+
+.news-more {
+	position: absolute;
+	right: 30px;
+	bottom: 20px;
+	color: #ffffff;
+	font-size: 18px;
+}
+	
+a:hover{
+	cursor: pointer;
+	opacity: 0.8;
+}

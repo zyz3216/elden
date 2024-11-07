@@ -1,0 +1,31 @@
+.nav1{
+	height: 40px;
+	width: 100%;
+	background-color:black;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+.btli{
+	float: left;
+	list-style: none;
+	width: 100px;
+	line-height: 40px;
+	font-weight: 700;
+	text-align: center;
+}
+.nav1list a{
+	color:white;
+	display: block;
+}
+.nav1list{
+	width: 1400px;
+	margin: auto;
+}
+.nav1list a:hover{
+	background-color: black;
+	color: gold;
+	overflow: hidden;
+	opacity: 0.9;
+}

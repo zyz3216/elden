@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="./css/导航.css">
+		<style>
+			.nav1{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+			body {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background:url(img/6.jpg);
+				no-repat;
+				background-size: cover;
+				background-attachment: fixed;;
+			}
+
+			.shell {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.card {
+				width: 270px;
+				height: 545px;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+				padding: 0 25px;
+				perspective: 2500px;
+				transition: all 0.4s;
+				margin: 0 100px;
+			}
+
+			.cover-image {
+				width: 100%;
+				height: 100%;
+			}
+
+			.wrapper {
+				transition: all 0.3s;
+				position: absolute;
+				width: 100%;
+				z-index: -1;
+			}
+
+			.card:hover .wrapper {
+				transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+				box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+			}
+
+			.wrapper::before,
+			.wrapper::after {
+				content: "";
+				opacity: 0;
+				width: 100%;
+				height: 80px;
+				transition: all 0.3s;
+				position: absolute;
+				left: 0;
+			}
+
+			.wrapper::before {
+				top: 0;
+				height: 100%;
+				background-image: linear-gradient(to top,
+						transparent 46%,
+						rgba(12, 13, 19, 0.5) 68%,
+						rgba(12, 13, 19) 97%);
+			}
+
+			.wrapper::after {
+				bottom: 0;
+				opacity: 1;
+				background-image: linear-gradient(to bottom,
+						transparent 46%,
+						rgba(12, 13, 19, 0.5) 68%,
+						rgba(12, 13, 19) 97%);
+			}
+
+			.card:hover .wrapper::before,
+			.wrapper::after {
+				opacity: 1;
+			}
+
+			.card:hover .wrapper::after {
+				height: 120px;
+			}
+
+			.title {
+				width: 100%;
+				transition: transform 0.3s;
+			}
+
+			.card:hover .title {
+				transform: translate3d(0%, -50px, 100px);
+			}
+
+			.character {
+				width: 100%;
+				opacity: 0;
+				transition: all 0.3s;
+				position: absolute;
+				z-index: -1;
+			}
+
+			.card:hover .character {
+				opacity: 1;
+				transform: translate3d(0%, -20%, 100px);
+			}
+
+			.card:hover {
+				transform: translateY(40px);
+			}
+			a{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav1">
+			<ul class="nav1list">
+				<li class="btli"><a href="./艾尔登.html" target="_blank">主     页</a></li>
+				<li class="btli"><a href="人物.html" target="_blank">人     物</a></li>
+				<li class="btli"><a href="武器.html" target="_blank">武     器</a></li>
+				<li class="btli"><a href="登录.html" target="_blank">登     录</a></li>
+			</ul>
+		</div>
+		<div class="shell">
+			<div class="card">
+				<div class="wrapper">
+					<img src="img/v2-6fc4ffcba58a9d1ea6a8704b43cb7ed1_720w.webp" alt="" class="cover-image">
+				</div>
+				<img src="" alt="" class="title">
+				<img src="img/免抠图片_1715339448477.png" alt="" class="character" height="500px">
+			</div>
+
+			<div class="card">
+				<div class="wrapper">
+					<img src="img/v2-417efdcb95596dba7afc02d614f5677c_r.jpg" alt="" class="cover-image">
+				</div>
+				<img src="" alt="" class="title">
+				<img src="img/免抠图片_1715338293497.png" alt="" class="character">
+			</div>
+		</div>
+	</body>
+</html>
